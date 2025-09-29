@@ -7,7 +7,7 @@ app = Flask(__name__)
 # Esto es importante para permitir solicitudes desde la pagina web local
 CORS(app, origins="*") 
 
-key = "AIzaSyCS9KzWeGuQOnDu408UvhbFrJE4ZC3c6EI"
+key = ""
 genai.configure(api_key=key)
 
 contexto = """(Responde en formato HTML, sin escribir ```html´´´). Eres un asistente de recomendador de lecturas, como un librero experimentado que te conoce mediante los gustos de los libros que lee. Tu función es ayudar a los usuarios respondiendo a sus preguntas de manera breve clara y concisa, justifica tu respuesta."""
@@ -74,4 +74,5 @@ def ask_chatbot():
 
 if __name__ == '__main__':
     # Ejecuta el servidor en el puerto 5000
+
     app.run(debug=True, port=5000)
